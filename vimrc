@@ -15,8 +15,11 @@
         " Plug 'bfrg/vim-cpp-modern'
         " plug for simple commenting
         Plug 'scrooloose/nerdcommenter'
+        " plug for automatic code formatting
+        Plug 'vim-autoformat/vim-autoformat'
         " plug for better folding
-        Plug 'https://github.com/pseewald/vim-anyfold' " sucks
+        Plug 'https://github.com/pseewald/vim-anyfold'
+        " sucks
         " Plug 'https://github.com/tmhedberg/SimpylFold'
         " filelist
         Plug 'https://github.com/scrooloose/nerdtree'
@@ -129,8 +132,8 @@
     " endif
     
     set t_Co=256
-    " autocmd BufEnter * colorscheme default
-    autocmd BufEnter * colorscheme sunburst
+    autocmd BufEnter * colorscheme default
+    " autocmd BufEnter * colorscheme sunburst
 
 
     " split window
@@ -291,6 +294,15 @@
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
     " let g:NERDTreeMapOpenVSplit = <Enter>
+
+
+" -AUTOFORMAT-SETTINGS----------------------------------------------------------
+
+noremap = :Autoformat<CR>
+
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
 
 
 " -COC.nvim-SETTINGS------------------------------------------------------------
